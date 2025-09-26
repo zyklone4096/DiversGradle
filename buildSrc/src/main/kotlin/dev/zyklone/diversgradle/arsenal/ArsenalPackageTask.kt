@@ -1,6 +1,5 @@
 package dev.zyklone.diversgradle.arsenal
 
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
@@ -46,7 +45,7 @@ abstract class ArsenalPackageTask @Inject constructor(@Internal val config: Arse
         // generate manifest
         val obj = JsonObject()
         obj.addProperty("Version", 1)
-        obj.addProperty("Guid", UUID.nameUUIDFromBytes(project.name.toByteArray()).toString())
+        obj.addProperty("Guid", UUID.nameUUIDFromBytes("DiversGradle:${project.name}:${main.author}".toByteArray()).toString())
         obj.addProperty("Name", project.name)
         obj.addProperty("Description", main.description.get())
 
