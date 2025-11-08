@@ -82,7 +82,7 @@ abstract class ArsenalPackageTask @Inject constructor(@Internal val config: Arse
                 // add to manifest
                 val opt = JsonObject()
                 opt.addProperty("Name", name)
-                opt.add("Includes", JsonArray().apply {
+                opt.add("Include", JsonArray().apply {
                     add(sub)
                 })
                 config.description?.let { opt.addProperty("Description", it) }
